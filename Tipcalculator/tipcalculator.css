@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #641812;
+}
+.wrapper {
+    
+    width: 60%;
+    border-radius: 2rem;
+    margin: 5rem auto;
+    background-color: white;
+}
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    margin: 1rem auto .5rem 1rem;
+}
+input,select {
+    display:block;
+    margin: 1rem auto .5rem 1rem;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+select {
+    height: 3rem;
+}
+div.question section {
+ display: inline-block;
+}
+button {
+    display: block;
+    margin: 1rem auto;
+    border: none;
+    border-radius: .2rem;
+    background-color: magenta;
+    padding: .5rem;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+.people {
+    display: inline;
+    padding-left: 2rem;
+}
+div.result {
+    text-align: center;
+    font-weight: bold;
+}
+.dollar {
+    display: flex;
+    flex-flow: row nowrap;
+    
+}  
+.finalamount {
+    flex-basis: 30%;
+    margin-left: 0;
+    padding-right: 40%;
+}
+.sign {
+    flex-basis: 30%;
+    margin-right: 0;
+    padding-right:0;
+    padding-left: 45%;
+}
