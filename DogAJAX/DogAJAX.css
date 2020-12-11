@@ -1,0 +1,18 @@
+@keyframes spin {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+.spinner {
+    font-size: 50px;
+    text-align: center;
+    animation: 3s spin linear infinite;
+    display: none; 
+}
+
+.doggos-image {
+    display: none;
+}
+.show {
+    display: block;
+}
