@@ -47,6 +47,7 @@ upload.addEventListener('click', function() {
         alert ("Make sure you answer everything");
     };
     userName.value = '';
-    console.log(completeArray);
+    comments.value = '';
+        console.log(completeArray);
 })
 
