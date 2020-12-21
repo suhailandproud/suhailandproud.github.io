@@ -3,10 +3,6 @@ let taskArray = [];
 const completeArray = [];
 let currentTask = 1;
 
-
-
-
-
 fetch(TASKFETCH_URL)
 .then(function(response) {
     return response.json();
