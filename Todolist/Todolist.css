@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+}
+
+div {
+    display: block;
+    align-items: center;
+    width: 50%;
+    
+    margin: auto;
+    margin-top: 10rem;
+    padding: auto;
+    background-color: cyan;
+}
+
+input:not([type= "checkbox"]), textarea {
+    display: block;
+    margin-top: 0.5rem;
+    border: 5px solid black;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    color: #005CC8;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+button {
+    display: block;
+    align-items: center;
+    border-radius : 3px;
+    border: none;
+    background-color: #005CC8;
+    font-size: 30px;
+    font-weight: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 2rem auto;
+}
+button:hover {
+    background-color: black;
+}
