@@ -1,49 +1,71 @@
 const TASKFETCH_URL = "https://jsonplaceholder.typicode.com/comments";
-let taskArray = [];
+let todoArray = [];
 const completeArray = [];
-let currentTask = 1;
-
-fetch(TASKFETCH_URL)
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    for (i=0; i<data.length; i++) {
-        
-        taskArray.push(data[i].name);    
-};
-userDescription.innerText = taskArray[0];
-})
-.then(feed());
+let currentTask = 0;
 
 
-const userDescription = document.querySelector('.userDescription');
 
 
-function feed() { setInterval (function() {
 
-    userDescription.innerText = taskArray[currentTask]; 
-    currentTask++;
-}, 60000)
-};
 
-let upload= document.querySelector('.upload');
-let userName= document.getElementById('userName');
+
+
+
+upload = document.querySelector('.upload');
+let taskName= document.getElementById('taskName');
 let checkbox = document.querySelector('.checkbox');
 let comments = document.getElementById('comments');
+let taskStatus = document.querySelector('.task-status');
+let taskComplete;
 
 upload.addEventListener('click', function() {
-    if (userName.value) {
-        completeArray.push({'name' : userName.value,
-                             'description': userDescription.innerText,
-                            'taskComplete': checkbox.checked,
-                            'comments' : comments.value}); 
-                                               
-    } else {
-        alert ("Make sure you answer everything");
-    };
-    userName.value = '';
-    comments.value = '';
-        console.log(completeArray);
+      if (taskName.value && comments.value ) {
+        todoArray.push({ id: currentTask,
+                name: taskName.value,
+                description: comments.value,
+                 completed: checkbox.checked }); 
+                 ; 
+                 const taskCard = document.createElement('li');
+                 const deleteButton = document.createElement('button');
+                 deleteButton.innerText = 'Delete'; 
+                 deleteButton.classList.add('delete-button');
+                 let checkboxCard = document.createElement('input');
+                 checkboxCard.type = 'checkbox';
+                 checkboxCard.checked = checkbox.checked;
+                 checkboxCard.classList.add('checkbox-card');
+                 checkboxCard.name = 'checkbox-card';
+                 checkboxCard.value = 'checkbox-card';
+                     taskCard.innerText = `Name: ${taskName.value}
+                                           Description: ${comments.value}`;
+                     taskCard.dataset.index = currentTask;
+                     currentTask++; 
+                     taskCard.appendChild(checkboxCard);                     
+                     taskCard.appendChild(deleteButton);                      
+                     taskStatus.appendChild(taskCard); 
+                     deleteButton.addEventListener('click', function() {
+                             taskCard.remove();
+                             for (i=0; i<todoArray.length; i++) {
+                                     if (parseInt(todoArray[i].id) == parseInt(taskCard.dataset.index)) {
+                                             todoArray.splice(i,1);
+                                     }
+                             };        
+                             
+                             console.log(todoArray, currentTask);
+                     });
+                     checkboxCard.addEventListener('change', function() {
+                             
+                                     for (i=0; i<todoArray.length; i++) {
+                                             if (parseInt(todoArray[i].id) == parseInt(taskCard.dataset.index)) {
+                                                     todoArray[i].completed =  this.checked;
+                                             }
+                                     };
+                                     console.log(todoArray);
+                             
+                     })    
+}   else  {
+     alert ("Make sure you filled the form");
+};
+        
+        taskName.value = '';
+        comments.value = '';
 })
-

@@ -11,14 +11,17 @@
     <div>
     <fieldset>
         <legend>Your to-do list now</legend>
-        <label for= "userName">Name</label>
-        <input placeholder= "Write your full name" id= "userName" type= "text" name= "userName">
-        <h2 class= "userDescription">This is your work</h2>
+        <label for= "taskName">Your Task Name</label>
+        <input placeholder= "Write your task name correctly" id= "taskName" type= "text" name= "taskName">
+        
         <label><input type= "checkbox" name= "work-done" value= "work-done" class= "checkbox" checked>Task completed</label>
         <p>(Uncheck if task not completed yet!)</p>
+        
         <label for= "comments">Write something...</label>
         <textarea id= "comments" name= "comments" ></textarea>
         <button class= "upload">OK</button>
+
+        <ul class= 'task-status'></ul>
     </fieldset>
 </div>
 

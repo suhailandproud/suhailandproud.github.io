@@ -52,3 +52,26 @@ button {
 button:hover {
     background-color: black;
 }
+
+.hide {
+    display: none;
+}
+
+.delete-button {
+    display:block;
+    border: none;
+    border-radius: 1px;
+    background-color: #005CC8;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    margin: -2rem 5rem 1rem auto;
+
+}
+
+.checkbox-card {
+    display: block;
+    margin: 1rem auto 1rem 5rem;
+}
